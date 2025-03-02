@@ -47,10 +47,10 @@ namespace esphome
 
         void TxUltimateTouch::handle_touch(int bytes[])
         {
-            ESP_LOGI("UART-Log", "------------");
+            ESP_LOGV("UART-Log", "------------");
             for (int i = 0; i < 15; i++)
             {
-                ESP_LOGI("UART-Log", "%i", bytes[i]);
+                ESP_LOGV("UART-Log", "%i", bytes[i]);
             }
 
             if (is_valid_data(bytes))
@@ -192,6 +192,12 @@ namespace esphome
 
         TouchPoint TxUltimateTouch::get_touch_point(int bytes[])
         {
+            ESP_LOGV("UART-Log", "------------");
+            for (int i = 4; i < 15; i++)
+            {
+                ESP_LOGV("UART-Log", "%d: %i", i, bytes[i]);
+            }
+            
             TouchPoint tp;
 
             tp.x = get_x_touch_position(bytes);
