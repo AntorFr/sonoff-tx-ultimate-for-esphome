@@ -50,7 +50,7 @@ namespace esphome
             ESP_LOGI("UART-Log", "------------");
             for (int i = 0; i < 15; i++)
             {
-                ESP_LOGI("UART-Log", "%i", bytes[i]);
+                ESP_LOGI("UART-Log", "%d:%i", i, bytes[i]);
             }
 
             if (is_valid_data(bytes))
