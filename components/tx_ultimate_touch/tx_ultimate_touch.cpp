@@ -192,10 +192,10 @@ namespace esphome
 
         TouchPoint TxUltimateTouch::get_touch_point(int bytes[])
         {
-            ESP_LOGV("UART-Log", "------------");
+            ESP_LOGI("UART-Log", "------------");
             for (int i = 4; i < 15; i++)
             {
-                ESP_LOGV("UART-Log", "%d: %i", i, bytes[i]);
+                ESP_LOGI("UART-Log", "%d: %i", i, bytes[i]);
             }
             
             TouchPoint tp;
